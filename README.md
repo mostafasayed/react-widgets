@@ -1,4 +1,104 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Widgets
+
+Here I added some useful widget that can be used in your React project (Accordion, Search [Wikipedia](https://www.wikipedia.org/), Translate [Google](https://translate.google.com/), Dropdown menu) 
+
+## Getting Started
+
+Its very sample open your command line cd to project directory, run `npm start` to start it, in development server open your browser navigate to `http://localhost:3000/` Also you can choose whatever widget you want and use it in your own project.
+
+## Usage
+We have 4 widgets (Accordion, Search [Wikipedia](https://www.wikipedia.org/), Translate [Google](https://translate.google.com/), Dropdown menu)
+
+### Accordion
+
+Copy src/components/Accordion.js to your project import it in needed location
+
+```
+import Accordion from "./components/Accordion";
+```
+
+and use it like that
+
+```
+<Accordion items={items} />
+```
+
+where items list of object contains title and content
+```
+const items=[{title: 'First Title', content: 'First Content'}]
+```
+
+### Search
+
+Copy src/components/Search.js to your project import it in needed location
+
+```
+import Search from "./components/Search";
+```
+
+and use it like that
+
+```
+<Search />
+```
+
+it search by whatever term in [Wikipedia](https://www.wikipedia.org/)
+
+### DropDown
+
+Copy src/components/DropDown.js to your project import it in needed location
+
+```
+import Search from "./components/DropDown";
+```
+
+and use it like that
+
+```
+<DropDown
+          options={options}
+          label="Select Color"
+          selected={selected}
+          onSelectedChange={setSelected}
+        />
+```
+where options list of object contains label and value, selected, and setSelected are to manage state
+
+
+```
+const [selected, setSelected] = useState(options[0]);
+const options = [{label: 'The Red Color', value: 'red'}]
+```
+
+### Translate
+
+It uses google translate api to perform the translation
+
+copy three files to your project Convert.js, DropDown.js, Translate.js
+
+First put your API key in key constant in Convert.js
+
+Then import Translate.js
+
+```
+import Translate from "./components/Translate";
+```
+
+in Translate.js options variable with whatever translation options your want where the label will be Language label, value will be [Language Code] (https://cloud.google.com/translate/docs/languages)
+
+Then you can use it like that
+
+```
+<Translate />
+```
+
+
+## Versioning
+1.0.0
+
+## Authors
+
+Mostafa Hanafy
 
 ## Available Scripts
 
@@ -26,43 +126,3 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
